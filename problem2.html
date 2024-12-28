@@ -1,0 +1,39 @@
+<!-- // Write a function called greetUser that prompts the user to enter their name using the prompt() function. If the user enters a name, greet them with the message: "Hello, <name>!". If no name is provided (i.e., the user presses "Cancel" or enters an empty string), the function should use a default name "Guest" and greet them with: "Hello, Guest!".
+
+// Requirements:
+
+// Use a function expression.
+// Ensure the function handles cases where the user cancels or leaves the input empty. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const greetUser = function () {
+        const name = prompt("Please enter your name:");
+
+        if (name === null || name === "") {
+            // User pressed "Cancel" or entered an empty string
+            alert("Hello, Guest!");
+        } 
+        else {
+            // User entered a valid name
+            alert("Hello, " + name + "!");
+        }
+    };
+
+    // Call the function to test it
+    greetUser();
+</script>

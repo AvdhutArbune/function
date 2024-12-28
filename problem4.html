@@ -1,0 +1,56 @@
+<!-- // Problem Statement:
+// Write a function called calculatePrice that prompts the user for two inputs: price and discount. If the user doesn't
+provide a discount (i.e., leaves it blank), the function should apply a default discount of 10%. If the user provides an
+invalid price or discount (e.g., a negative number or non-numeric input), it should display an error message and prompt
+them to try again.
+
+// Finally, the function should calculate and return the final price after applying the discount.
+
+// Requirements:
+
+// Use default parameters for the discount.
+// Validate both inputs to ensure they are positive numbers. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    function calculatePrice() {
+        // Prompt for price
+        let priceInput = prompt("Enter the price:");
+        if (!priceInput || isNaN(priceInput) || Number(priceInput) <= 0) {
+            alert("Invalid input: Price must be a positive number.");
+            return;
+        }
+        let price = parseFloat(priceInput);
+
+        // Prompt for discount
+        let discountInput = prompt("Enter the discount (leave blank for 10%):");
+        let discount = 10; // Default discount
+        if (discountInput) {
+            if (isNaN(discountInput) || Number(discountInput) < 0 || Number(discountInput) > 100) {
+                alert("Invalid input: Discount must be between 0 and 100.");
+                return;
+            }
+            discount = parseFloat(discountInput);
+        }
+
+        // Calculate final price
+        let finalPrice = price * (1 - discount / 100);
+        alert(`The final price is: ${finalPrice.toFixed(2)}`);
+    }
+
+    // Example usage
+    calculatePrice();
+</script>

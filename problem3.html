@@ -1,0 +1,64 @@
+<!-- Write a function called sumNumbers that prompts the user to enter a series of numbers (one at a time using prompt()). After each prompt, the function should check if the user has entered a valid number. If not, prompt them again until they provide valid numbers.
+
+The function should then use rest parameters to sum up all the valid numbers and return the total.
+
+Example Scenario:
+
+The user enters 5, 10, and 15.
+The function returns 30.
+Requirements:
+
+Use a loop to collect the numbers.
+Use the sumNumbers(...args) function to calculate the sum of the numbers using rest parameters. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function sumNumbers() {
+        let validNumbers = [];
+        let total = 0;
+        let input;
+
+        while (true) {
+            input = prompt("Enter a number (or type 'done' to finish):");
+
+            // Check if the user wants to finish
+            if (input === null || input.toLowerCase() === "done") {
+                break;
+            }
+
+            const number = parseFloat(input);
+
+            // Validate if the input is a number
+            if (!isNaN(number)) {
+                validNumbers.push(number); // Store valid numbers in an array
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        // Sum the numbers using a for loop
+        for (let i = 0; i < validNumbers.length; i++) {
+            total += validNumbers[i];
+        }
+
+        alert("The total sum is: " + total);
+        return total;
+    }
+
+    // Call the function to test it
+    sumNumbers();
+
+</script>
+
+</html>
